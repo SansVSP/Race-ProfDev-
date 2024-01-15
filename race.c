@@ -1,3 +1,9 @@
+/*
+	Based on the Race Simulator project from Codecademy
+	This version has been altered to take user input for the the names of the drivers and the colours of the race cars
+	Modified by Sancha van Spil
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -64,28 +70,28 @@ void startRace(struct RaceCar* raceCar1, struct RaceCar* raceCar2){
   printCongratulation(race);
 };
 int main() {
-	char Racer1[40];
-	char CarColor1[20];
-	char Racer2[40];
-	char CarColor2[20];
+	char Racer1[40]; //Array to store driver's name
+	char CarColor1[20]; //Array to store car colour
+	char Racer2[40]; //Array to store driver's name
+	char CarColor2[20]; //Array to store car colour
   srand(time(0)); 
   printIntro(); 
   
-	fflush(stdin);
-	fflush(stdout);
-	printf("Driver:\n");
-  scanf("%[^\n]%*c", &Racer1);
+  fflush(stdin); //Clearing input to prevent problems with scanf
+  fflush(stdout); //Clearing output to prevent problems with printf and scanf
+  printf("Driver:\n");
+  scanf("%[^\n]%*c", &Racer1); //Takes input for the driver's name
 
   printf("Racecar color:\n");
-  scanf("%[^\n]%*c", &CarColor1);
+  scanf("%[^\n]%*c", &CarColor1); //Takes input for the colour of the car
 	
 
   printf("Driver:\n");
-  scanf("%[^\n]%*c", &Racer2);
+  scanf("%[^\n]%*c", &Racer2); //Takes input for the driver's name
 	
 
   printf("Racecar color:\n");
-  scanf("%[^\n]%*c", &CarColor2);
+  scanf("%[^\n]%*c", &CarColor2); //Takes input for the colour of the car
 	
 
   struct RaceCar raceCar1 = {Racer1, CarColor1, 0};
